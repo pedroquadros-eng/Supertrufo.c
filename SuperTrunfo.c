@@ -50,5 +50,35 @@ scanf("%s", codigoCarta1); // Removido o '&' - veja a observação abaixo
     
     // --- Fim do Cadastro da Carta 1 ---
 
+    // --- Início do Cadastro da Carta 2 ---
+
+    printf("\n--- Cadastro da Carta 2 ---\n");
+
+    printf("Digite o estado (uma letra maiúscula): ");
+    scanf(" %c", &estadoCarta2);
+
+    // Adicione estas linhas para limpar o buffer de entrada
+    while ((c = getchar()) != '\n' && c != EOF) { }
+    
+    printf("Digite o código da cidade (ex: A01): ");
+    scanf("%s", codigoCarta2); // Repetir o mesmo padrão de remoção do "&"
+
+    printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]", &nomeCidade2);
+
+    printf("Digite a população: ");
+    scanf( "%d", &populacaoCarta2); 
+
+    printf("Digite a área (em km²): ");
+    scanf( "%f", &areaCarta2);      
+
+    printf("Digite o PIB (em bilhões): ");
+    scanf( "%f", &pibCarta2);
+
+    printf("Digite o número de pontos turísticos: ");
+    scanf( "%d", &pontosTuristicos2);
+
+    // --- Fim do Cadastro da Carta 2 ---
+
     
 }
