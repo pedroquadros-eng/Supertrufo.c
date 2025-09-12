@@ -25,12 +25,12 @@ int main() {
    printf("Digite o estado (uma letra maiúscula): ");
 scanf(" %c", &estadoCarta1);
 
-// Adicione estas linhas para limpar o buffer de entrada
+// Adicionei estas linhas para limpar o buffer de entrada
 int c;
 while ((c = getchar()) != '\n' && c != EOF) { }
 
 printf("Digite o código da cidade (ex: A01): ");
-scanf("%s", codigoCarta1); // Removido o '&' - veja a observação abaixo
+scanf("%s", codigoCarta1); // Removido o '&' 
 
     printf("Digite o nome da cidade: ");
     scanf(" %[^\n]", &nomeCidade1);
@@ -57,7 +57,7 @@ scanf("%s", codigoCarta1); // Removido o '&' - veja a observação abaixo
     printf("Digite o estado (uma letra maiúscula): ");
     scanf(" %c", &estadoCarta2);
 
-    // Adicione estas linhas para limpar o buffer de entrada
+    // Adicionei estas linhas para limpar o buffer de entrada
     while ((c = getchar()) != '\n' && c != EOF) { }
     
     printf("Digite o código da cidade (ex: A01): ");
@@ -79,6 +79,43 @@ scanf("%s", codigoCarta1); // Removido o '&' - veja a observação abaixo
     scanf( "%d", &pontosTuristicos2);
 
     // --- Fim do Cadastro da Carta 2 ---
+
+    // Exibir os dados cadastrados para verificação
+    
+    printf("\n--- Dados da Carta 1 ---\n");
+    
+    printf("Estado: %c\n", estadoCarta1);
+    
+    printf("Código da Cidade: %s\n", codigoCarta1);
+    
+    printf("Nome da Cidade: %s\n", nomeCidade1);
+    
+    printf("População: %d\n", populacaoCarta1);
+    
+    printf("Área (km²): %.2f\n", areaCarta1);
+    
+    printf("PIB (bilhões): %.2f\n", pibCarta1);
+    
+    printf("Pontos Turísticos: %d\n", pontosTuristicos1);       
+    
+   
+   
+    printf("\n--- Dados da Carta 2 ---\n");
+    
+    printf("Estado: %c\n", estadoCarta2);
+    
+    printf("Código da Cidade: %s\n", codigoCarta2);
+    
+    printf("Nome da Cidade: %s\n", nomeCidade2);
+    
+    printf("População: %d\n", populacaoCarta2);
+    
+    printf("Área (km²): %.2f\n", areaCarta2);
+    
+    printf("PIB (bilhões): %.2f\n", pibCarta2);
+    
+    printf("Pontos Turísticos: %d\n", pontosTuristicos2);
+        
 
     
 }
