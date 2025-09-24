@@ -2,7 +2,7 @@
 
 int main() {
     // Declaração de variáveis para a Carta 1
-    char estadoCarta1;
+    char estadoCarta1;[30]
     char codigoCarta1[5]; // Ex: "A01" + caractere nulo '\0'
     char nomeCidade1[50];
     int populacaoCarta1;
@@ -11,13 +11,20 @@ int main() {
     int pontosTuristicos1;
 
     // Declaração de variáveis para a Carta 2
-    char estadoCarta2;
+    char estadoCarta2;[30]
     char codigoCarta2[5];
     char nomeCidade2[50];
     int populacaoCarta2;
     float areaCarta2;
     float pibCarta2;
     int pontosTuristicos2;
+
+    // Variáveis para cálculos da carta 1
+float densidadePopulacional1;
+float pibPerCapita1;
+// Variáveis para cálculos da carta 2
+float densidadePopulacional2;
+float pibPerCapita2;
 
     // --- Início do Cadastro da Carta 1 ---
     printf("--- Cadastro da Carta 1 ---\n");
