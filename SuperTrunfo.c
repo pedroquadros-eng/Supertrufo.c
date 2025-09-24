@@ -52,8 +52,20 @@ scanf("%s", codigoCarta1); // Removido o '&'
     scanf( "%f", &pibCarta1);        
     
     printf("Digite o número de pontos turísticos: ");
-    scanf( "%d", &pontosTuristicos1);    
+    scanf( "%d", &pontosTuristicos1);  
     
+    
+// Cálculo da densidade populacional e PIB per capita da carta 1
+// densidade = população / área
+// pib per capita = pib / população
+// Ambos são float para precisão
+if (areaCarta1 > 0 && populacaoCArta1 > 0) {
+    densidadePopulacional1 = populacaoCArta1 / areaCarta1;
+    pibPerCapita1 = pibCarta1 / populacaoCArta1;
+} else {
+    densidadePopulacional1 = 0;
+    pibPerCapita1 = 0;
+}
     
     // --- Fim do Cadastro da Carta 1 ---
 
@@ -85,6 +97,14 @@ scanf("%s", codigoCarta1); // Removido o '&'
     printf("Digite o número de pontos turísticos: ");
     scanf( "%d", &pontosTuristicos2);
 
+    // Cálculo da densidade populacional e PIB per capita da carta 2
+    if (areaCarta2 > 0 && populacaoCArta2 > 0) {
+    densidadePopulacional2 = populacaoCArta2 / areaCarta2;
+    pibPerCapita2 = pibCarta2 / populacaoCArta2;
+    } else {
+    densidadePopulacional2 = 0;
+    pibPerCapita2 = 0;
+    }
     // --- Fim do Cadastro da Carta 2 ---
 
     // Exibir os dados cadastrados para verificação
@@ -103,7 +123,11 @@ scanf("%s", codigoCarta1); // Removido o '&'
     
     printf("PIB (bilhões): %.2f\n", pibCarta1);
     
-    printf("Pontos Turísticos: %d\n", pontosTuristicos1);       
+    printf("Pontos Turísticos: %d\n", pontosTuristicos1);
+    
+    printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional1);
+    
+    printf("PIB per Capita: %.2f\n", pibPerCapita1);       
     
    
    
@@ -122,6 +146,10 @@ scanf("%s", codigoCarta1); // Removido o '&'
     printf("PIB (bilhões): %.2f\n", pibCarta2);
     
     printf("Pontos Turísticos: %d\n", pontosTuristicos2);
+
+    printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional2);
+    
+    printf("PIB per Capita: %.2f\n", pibPerCapita2);
         
 
     
