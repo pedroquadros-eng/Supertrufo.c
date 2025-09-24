@@ -2,7 +2,7 @@
 
 int main() {
     // Declaração de variáveis para a Carta 1
-    char estadoCarta1;[30]
+    char estadoCarta1[30];
     char codigoCarta1[5]; // Ex: "A01" + caractere nulo '\0'
     char nomeCidade1[50];
     int populacaoCarta1;
@@ -11,7 +11,7 @@ int main() {
     int pontosTuristicos1;
 
     // Declaração de variáveis para a Carta 2
-    char estadoCarta2;[30]
+    char estadoCarta2 [30];
     char codigoCarta2[5];
     char nomeCidade2[50];
     int populacaoCarta2;
@@ -29,13 +29,12 @@ float pibPerCapita2;
     // --- Início do Cadastro da Carta 1 ---
     printf("--- Cadastro da Carta 1 ---\n");
 
-   printf("Digite o estado (uma letra maiúscula): ");
-scanf(" %c", &estadoCarta1);
+    printf("Digite o estado (uma letra maiúscula): ");
+    scanf(" %c", &estadoCarta1);
 
-// Adicionei estas linhas para limpar o buffer de entrada
-int c;
-while ((c = getchar()) != '\n' && c != EOF) { }
-
+    // Adicionei estas linhas para limpar o buffer de entrada
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) { }
 printf("Digite o código da cidade (ex: A01): ");
 scanf("%s", codigoCarta1); // Removido o '&' 
 
@@ -55,17 +54,17 @@ scanf("%s", codigoCarta1); // Removido o '&'
     scanf( "%d", &pontosTuristicos1);  
     
     
-// Cálculo da densidade populacional e PIB per capita da carta 1
-// densidade = população / área
-// pib per capita = pib / população
-// Ambos são float para precisão
-if (areaCarta1 > 0 && populacaoCArta1 > 0) {
-    densidadePopulacional1 = populacaoCArta1 / areaCarta1;
-    pibPerCapita1 = pibCarta1 / populacaoCArta1;
-} else {
-    densidadePopulacional1 = 0;
-    pibPerCapita1 = 0;
-}
+    // Cálculo da densidade populacional e PIB per capita da carta 1
+    // densidade = população / área
+    // pib per capita = pib / população
+    // Ambos são float para precisão
+    if (areaCarta1 > 0 && populacaoCarta1 > 0) {
+        densidadePopulacional1 = populacaoCarta1 / areaCarta1;
+        pibPerCapita1 = pibCarta1 / populacaoCarta1;
+    } else {
+        densidadePopulacional1 = 0;
+        pibPerCapita1 = 0;
+    }
     
     // --- Fim do Cadastro da Carta 1 ---
 
@@ -75,6 +74,7 @@ if (areaCarta1 > 0 && populacaoCArta1 > 0) {
 
     printf("Digite o estado (uma letra maiúscula): ");
     scanf(" %c", &estadoCarta2);
+
 
     // Adicionei estas linhas para limpar o buffer de entrada
     while ((c = getchar()) != '\n' && c != EOF) { }
@@ -98,12 +98,12 @@ if (areaCarta1 > 0 && populacaoCArta1 > 0) {
     scanf( "%d", &pontosTuristicos2);
 
     // Cálculo da densidade populacional e PIB per capita da carta 2
-    if (areaCarta2 > 0 && populacaoCArta2 > 0) {
-    densidadePopulacional2 = populacaoCArta2 / areaCarta2;
-    pibPerCapita2 = pibCarta2 / populacaoCArta2;
+    if (areaCarta2 > 0 && populacaoCarta2 > 0) {
+        densidadePopulacional2 = populacaoCarta2 / areaCarta2;
+        pibPerCapita2 = pibCarta2 / populacaoCarta2;
     } else {
-    densidadePopulacional2 = 0;
-    pibPerCapita2 = 0;
+        densidadePopulacional2 = 0;
+        pibPerCapita2 = 0;
     }
     // --- Fim do Cadastro da Carta 2 ---
 
