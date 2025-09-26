@@ -5,7 +5,7 @@ int main() {
     char estadoCarta1[30];
     char codigoCarta1[5]; // Ex: "A01" + caractere nulo '\0'
     char nomeCidade1[50];
-    int populacaoCarta1;
+    unsigned long int populacaoCarta1;
     float areaCarta1;
     float pibCarta1;
     int pontosTuristicos1;
@@ -14,17 +14,17 @@ int main() {
     char estadoCarta2 [30];
     char codigoCarta2[5];
     char nomeCidade2[50];
-    int populacaoCarta2;
+    unsigned long int populacaoCarta2;
     float areaCarta2;
     float pibCarta2;
     int pontosTuristicos2;
 
     // Variáveis para cálculos da carta 1
-float densidadePopulacional1;
-float pibPerCapita1;
-// Variáveis para cálculos da carta 2
-float densidadePopulacional2;
-float pibPerCapita2;
+    float densidadePopulacional1;
+    float pibPerCapita1;
+    float densidadePopulacional2;
+    float pibPerCapita2;
+    float superPoder1, superPoder2;
 
     // --- Início do Cadastro da Carta 1 ---
     printf("--- Cadastro da Carta 1 ---\n");
@@ -106,6 +106,21 @@ scanf("%s", codigoCarta1); // Removido o '&'
         pibPerCapita2 = 0;
     }
     // --- Fim do Cadastro da Carta 2 ---
+
+    // Cálculo do Super Poder
+    // superPoder = população + área + PIB + pontos turísticos + PIB per capita + (1.0 / densidade populacional)
+    superPoder1 = (float)populacaoCarta1 + areaCarta1 + pibCarta1 + (float)pontosTuristicos1 + pibPerCapita1 + (densidadePopulacional1 > 0 ? (1.0f / densidadePopulacional1) : 0);
+    superPoder2 = (float)populacaoCarta2 + areaCarta2 + pibCarta2 + (float)pontosTuristicos2 + pibPerCapita2 + (densidadePopulacional2 > 0 ? (1.0f / densidadePopulacional2) : 0);
+
+    // --- Comparação dos atributos ---
+    printf("\nComparação de Cartas:\n");
+    printf("População: Carta %d venceu (%d)\n", (populacaoCarta1 > populacaoCarta2 ? 1 : 2), (populacaoCarta1 > populacaoCarta2 ? 1 : 0));
+    printf("Área: Carta %d venceu (%d)\n", (areaCarta1 > areaCarta2 ? 1 : 2), (areaCarta1 > areaCarta2 ? 1 : 0));
+    printf("PIB: Carta %d venceu (%d)\n", (pibCarta1 > pibCarta2 ? 1 : 2), (pibCarta1 > pibCarta2 ? 1 : 0));
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n", (pontosTuristicos1 > pontosTuristicos2 ? 1 : 2), (pontosTuristicos1 > pontosTuristicos2 ? 1 : 0));
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", (densidadePopulacional1 < densidadePopulacional2 ? 1 : 2), (densidadePopulacional1 < densidadePopulacional2 ? 1 : 0));
+    printf("PIB per Capita: Carta %d venceu (%d)\n", (pibPerCapita1 > pibPerCapita2 ? 1 : 2), (pibPerCapita1 > pibPerCapita2 ? 1 : 0));
+    printf("Super Poder: Carta %d venceu (%d)\n", (superPoder1 > superPoder2 ? 1 : 2), (superPoder1 > superPoder2 ? 1 : 0));
 
     // Exibir os dados cadastrados para verificação
     
